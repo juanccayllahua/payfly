@@ -1,0 +1,104 @@
+/* Estilos generales del navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1e2a47; /* Fondo oscuro */
+    color: white;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    color: white;
+}
+
+.navbar svg {
+    width: 40px;
+    height: 40px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #00BFAE; /* Cambio de color al pasar el mouse */
+}
+
+/* Estilos del menú móvil */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px;
+    transition: all 0.3s ease;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background-color: #1e2a47;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 15px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: rotate(45deg);
+        position: relative;
+        top: 8px;
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: rotate(-45deg);
+        position: relative;
+        top: -8px;
+    }
+}
